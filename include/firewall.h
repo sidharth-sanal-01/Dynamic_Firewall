@@ -2,7 +2,7 @@
 #define firewall_h
 #include <iostream>
 
-class NetFirewall
+class DynamicFirewall
 {
 private:
     std::string s_port;
