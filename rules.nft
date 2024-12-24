@@ -1,0 +1,14 @@
+tcp in port=any dip=180.120.1.10 sip=any keepstate comment=Diagnostics
+tcp out port=any sip=180.120.1.10 dip=any keepstate comment=Diagnostics
+tcp in port=any dip=180.120.1.10 sip=any keepstate comment=Diagnostics
+tcp out port=any sip=180.120.1.10 dip=any keepstate comment=Diagnostics
+tcp in port=any dip=180.120.1.10 sip=any keepstate comment=Diagnostics
+tcp out port=any sip=180.120.1.10 dip=any keepstate comment=Diagnostics
+TCP saddr 168.254.33.95 port=4456 keepstate active
+TCP saddr 168.254.33.95 port=4456 keepstate active
+TCP saddr 168.254.33.95 port=4456 keepstate active
+TCP saddr 168.254.33.95 port=4456 keepstate active
+TCP saddr 168.254.33.95 port=4456 keepstate active
+TCP saddr 168.254.33.95 port=4456 keepstate active
+tcp in port=any dip=180.120.1.10 sip=any keepstate comment=Diagnostics
+tcp out port=any sip=180.120.1.10 dip=any keepstate comment=Diagnostics
