@@ -1,16 +1,23 @@
+#include "onboot.h"
+#include "firewallServerMain.h"
 #include <iostream>
-#include "rulecheck.h"
-#include "firewallServer.h"
-#include <memory>
+#include <thread>
 
 int main()
 {
-    std::unique_ptr<RuleCheck> check = std::make_unique<RuleCheck>();
-    // check->checkValidMac("00:1A:2B:3C:4D:5E");
-    // check->checkValidPortNumber("65535");
-    std::unique_ptr<FirewallServer> server = std::make_unique<FirewallServer>();
+    std::thread boot(Onboot::startBoot);
+    for (int i = 0; i < 5; i++)
+    {
+        std::cout << "Print First" << std::endl;
+    }
 
-    server->start_session();
-    server->RegisterServer();
-    server->startServer();
+    std::thread firewall(DynamicFirewall::StartMainServer);
+    for (int i = 0; i < 5; i++)
+    {
+        std::cout << "Print Sec" << std::endl;
+    }
+
+    boot.join();
+    firewall.join();
+    return EXIT_SUCCESS;
 }

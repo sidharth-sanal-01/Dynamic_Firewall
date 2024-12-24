@@ -1,0 +1,23 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-Bus Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+    <interface name="org.firewall.server">
+        <struct name="ruleStruct">
+            <field name="uid" type="i"/>
+            <field name="port" type="s"/>
+            <field name="sip" type="s"/>
+            <field name="dip" type="s"/>
+        </struct>
+        <method name="addRule">
+            <arg name="input" type="(isss)" direction="in"/>
+            <arg name="status" type="s" direction="out"/>
+        </method>
+        <method name="showRule">
+            <arg name="id" type="i" direction="in"/>
+            <arg name="output" type="(isss)" direction="out"/>
+        </method>
+        <method name="deleteRule">
+            <arg name="id" type="i" direction="in"/>
+            <arg name="status" type="s" direction="out"/>
+        </method>
+    </interface>
+</node>

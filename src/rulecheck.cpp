@@ -5,7 +5,10 @@
 
 bool RuleCheck::checkProtocol(const std::string &protocol)
 {
-    if (protocol == "udp" || protocol == "tcp" || protocol == "icmp")
+    std::string protocol_copy = protocol;
+    std::transform(protocol_copy.begin(), protocol_copy.end(), protocol_copy.begin(), [](char c)
+                   { return std::tolower(c); });
+    if (protocol_copy == "udp" || protocol_copy == "tcp" || protocol_copy == "icmp")
     {
 
         return true;
